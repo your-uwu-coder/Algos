@@ -1,0 +1,57 @@
+class SLLNode {
+    constructor(val) {
+        this.value = val;
+        this.next = null;
+    }
+}
+
+
+class SLL {
+    constructor() {
+        this.head = null
+    }
+
+    //All methods built into your class go here
+    addFront(value) {
+        var newNode = new SLLNode(value); // create a node containing a value
+        newNode.next = this.head; // connect node to the list
+        this.head = newNode; // make the node the head of the list or the "front" of the list
+        return this.head;
+    }
+
+    //Remote a node from the front of the list
+    removeFront() {
+        if (this.head == null){
+            return this.head;
+        }
+        var removedNode = this.head; // points to the head node that want to remove
+        this.head = removedNode.next; // now makes the next node as the head node
+        removedNode.next = null; // the original node will not have no connection to the list
+        return this.head; 
+    }
+
+    front() {
+        if (this.head == null) {
+            return this.head;
+        } else {
+            return this.head.value;
+        }
+        // can use ternary operator as well
+        // return this.head ? this.head.value : null; 
+        // return this.head == null ? null : this.head.value
+
+    }
+}
+
+//* Add front - add new number as this.head
+// *Remove front - remove this.head 
+// *Front - return the value in the node and if it's empty return null
+var mySLL = new SLL () // Starts off with empty list
+mySLL.addFront(10);
+mySLL.addFront(5);
+mySLL.addFront(3);
+mySLL.removeFront();
+console.log(mySLL) // shows the whole node
+// console.log(mySLL.head.next) // shows the second node
+
+
