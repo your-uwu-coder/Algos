@@ -11,7 +11,7 @@ class SLL {
         this.head = null
     }
 
-    //All methods built into your class go here
+    //!All methods built into your class go here
     addFront(value) {
         var newNode = new SLLNode(value); // create a node containing a value
         newNode.next = this.head; // connect node to the list
@@ -19,7 +19,7 @@ class SLL {
         return this.head;
     }
 
-    //Remote a node from the front of the list
+    //!Remote a node from the front of the list
     removeFront() {
         if (this.head == null){
             return this.head;
@@ -30,6 +30,7 @@ class SLL {
         return this.head; 
     }
 
+    //!Show the value and not the node of the this.head
     front() {
         if (this.head == null) {
             return this.head;
@@ -39,7 +40,21 @@ class SLL {
         // can use ternary operator as well
         // return this.head ? this.head.value : null; 
         // return this.head == null ? null : this.head.value
+    }
 
+    //!Display
+    display() {
+        var listStr = "";
+        if (this.head == null) {
+            return "";
+        }
+        listStr += this.head.value;
+        var runner = this.head.next;
+        while (runner != null) {
+            listStr += ", " + runner.value;
+            runner = runner.next;
+        }
+        return listStr;
     }
 }
 
@@ -52,6 +67,7 @@ mySLL.addFront(5);
 mySLL.addFront(3);
 mySLL.removeFront();
 console.log(mySLL) // shows the whole node
+console.log(mySLL.display())
 // console.log(mySLL.head.next) // shows the second node
 
 
