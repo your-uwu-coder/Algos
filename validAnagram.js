@@ -1,12 +1,13 @@
 var isAnagram = function(s, t) {
-    s = (s.split("").sort())
-    t = (t.split("").sort())
+    s = s.split("").sort()
+    t = t.split("").sort()
     console.log(s, t)
 
-    if (s.length !== t.length) 
+    if (s.length !== t.length) {
         return false;
+    }
 
-    for (let i = 0 ; i < s.length; i++) {
+    for (let i = 0; i < s.length; i++) {
         if (s[i] !== t[i]) {
             return false
         }
@@ -22,4 +23,4 @@ var isAnagram = function(s, t) {
 // if both arguments are matching, return true
 // if not return false
 
-console.log(isAnagram("water", "teawr"))
+console.log(isAnagram("water", "rwate"))
